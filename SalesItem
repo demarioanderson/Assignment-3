@@ -1,0 +1,45 @@
+public class SalesItem {
+    private String name;
+    private double price;
+    private int quantity;
+
+    public SalesItem(String name, double price, int quantity) {
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public double getLineTotal() {
+        return price * quantity;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%-15s  $%6.2f  x %3d  = $%7.2f",
+                name, price, quantity, getLineTotal());
+    }
+}
